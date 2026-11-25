@@ -56,6 +56,9 @@ p{margin:0}
 .brand h1{font-size:24px}
 .sync{font-size:13px;color:var(--muted)}
 
+.top-actions{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.home-btn{display:inline-flex;align-items:center;gap:4px;text-decoration:none;background:var(--accent-soft);color:var(--accent);border:1.5px solid var(--accent);border-radius:999px;padding:7px 14px;min-height:42px;font-weight:700;font-size:15px;white-space:nowrap;transition:transform .12s ease}
+.home-btn:active{transform:scale(0.97)}
 .seg{display:inline-flex;align-self:flex-start;background:var(--card);border:1.5px solid var(--line);border-radius:999px;padding:3px;gap:2px;flex-wrap:wrap}
 .seg button{border:0;background:transparent;border-radius:999px;padding:8px 16px;min-height:42px;font-weight:700;color:var(--muted)}
 .seg button[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink)}
@@ -181,9 +184,12 @@ code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:14px;background
         <p class="sync" id="sync">讀取素材中…</p>
       </div>
     </div>
-    <div class="seg" id="gradeSeg" role="group" aria-label="選擇年級">
-      <button type="button" data-g="g3">三年級</button>
-      <button type="button" data-g="g6">六年級</button>
+    <div class="top-actions">
+      <div class="seg" id="gradeSeg" role="group" aria-label="選擇年級">
+        <button type="button" data-g="g3">三年級</button>
+        <button type="button" data-g="g6">六年級</button>
+      </div>
+      <a href="../index.html" class="home-btn" aria-label="返回學習工具總入口">🏠 返回首頁</a>
     </div>
   </header>
   <nav id="nav" aria-label="練習項目"></nav>
