@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="家庭學習題庫" />
+  <title>家庭學習工具總入口</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      -webkit-tap-highlight-color: transparent;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans TC", sans-serif;
+    }
+    .card-press {
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .card-press:active {
+      transform: scale(0.98);
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+
+  <!-- 頂部標題區 -->
+  <header class="bg-white border-b border-slate-200 sticky top-0 z-10">
+    <div class="max-w-4xl mx-auto px-5 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-indigo-600 text-white flex items-center justify-center font-bold text-xl shadow-sm">
+          學
+        </div>
+        <div>
+          <h1 class="text-lg font-bold text-slate-900 leading-tight">家庭學習工具中心</h1>
+          <p class="text-xs text-slate-500">跨裝置互動練習與知識庫入口</p>
+        </div>
+      </div>
+      <span id="date-badge" class="text-xs font-medium bg-slate-100 text-slate-600 px-3 py-1.5 rounded-full"></span>
+    </div>
+  </header>
+
+  <!-- 主要內容區 -->
+  <main class="flex-1 max-w-4xl w-full mx-auto px-5 py-8">
+    <div class="mb-6">
+      <h2 class="text-base font-semibold text-slate-700">請選擇今天要練習的科目</h2>
+      <p class="text-sm text-slate-500 mt-0.5">點擊卡片即可進入全螢幕互動練習模式</p>
+    </div>
+
+    <!-- 科目卡片容器（由下方 JavaScript 自動生成） -->
+    <div id="subjects-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-5"></div>
+
+    <!-- 底部操作提示 -->
+    <div class="mt-10 bg-white border border-slate-200 rounded-2xl p-5 text-sm text-slate-600">
+      <div class="font-semibold text-slate-800 mb-1.5 flex items-center gap-2">
+        <span>📱</span>
+        <span>iPad 與電腦使用小提示</span>
+      </div>
+      <ul class="list-disc list-inside space-y-1 text-slate-500 text-xs sm:text-sm">
+        <li>在 iPad Safari 點擊「分享」並選擇「加入主畫面」，即可像原生 App 一樣全螢幕操作。</li>
+        <li>進入各科測驗後，點擊右上角的「返回首頁」即可隨時回到此畫面切換科目。</li>
+      </ul>
+    </div>
+  </main>
+
+  <script>
+    // ==========================================
+    // 【科目卡片設定區】日後要新增科目，只要在這裡複製貼上一組即可！
+    // ==========================================
+    const SUBJECTS = [
+      {
+        id: "math-g6",
+        title: "國小六年級數學（翰林版）",
+        subtitle: "六上重點題庫・含詳解解析與手寫草稿紙",
+        tag: "數學",
+        icon: "📐",
+        color: "blue",
+        link: "./math-g6/index.html"
+      },
+      {
+        id: "english-practice",
+        title: "英文單字與句型練習",
+        subtitle: "每日互動式英文拼字與測驗練習",
+        tag: "英文",
+        icon: "🔤",
+        color: "emerald",
+        link: "./english-practice/index.html"
+      }
+      // 範例：日後若要新增自然科，把下面這段的註解拿掉並修改內容即可：
+      /*
+      ,{
+        id: "science-g
